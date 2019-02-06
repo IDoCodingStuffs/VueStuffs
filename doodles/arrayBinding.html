@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order stuffs</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <p>I'll have</p>
+    <ul>
+        <li v-for="n in orderList">{{n}}</li>
+    </ul>
+</div>
+</body>
+
+<script>
+    //Enumeration starts from 1 for Vue :S
+    var app = new Vue({
+        el: '#app',
+        data: {
+            orderList: []
+        }
+    });
+
+    items = [
+        "Two number nines",
+        "A number nine large",
+        "A number six with extra dip",
+        "A number seven",
+        "Two number forty-fives, one with cheese",
+        "And a large soda."
+    ];
+
+    let counter = 0;
+
+    setInterval(function () {
+        if (counter < items.length) {
+            app.orderList.push(items[counter++])
+        }
+    }, 1000)
+
+</script>
+
+</html>
